@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwa4pu3tdudse"
-path="res://.godot/imported/presidentialDebateArena.png-9c104c2202a2da8df8271850741efcee.ctex"
+uid="uid://cahefc0qaalw6"
+path="res://.godot/imported/OLDpresidentialDebateArena.png-df9dcceb1faa50f2b72a4110d838a7a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/presidentialDebateArena.png"
-dest_files=["res://.godot/imported/presidentialDebateArena.png-9c104c2202a2da8df8271850741efcee.ctex"]
+source_file="res://assets/OLDpresidentialDebateArena.png"
+dest_files=["res://.godot/imported/OLDpresidentialDebateArena.png-df9dcceb1faa50f2b72a4110d838a7a4.ctex"]
 
 [params]
 
