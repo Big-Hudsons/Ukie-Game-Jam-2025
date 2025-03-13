@@ -57,13 +57,35 @@ alignment = 0
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Morality" type="Label" parent="."]
+[node name="Player Morality" type="Label" parent="."]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 250.0
-offset_right = 440.0
-offset_bottom = 299.0
+offset_left = 40.0
+offset_top = 257.0
+offset_right = 295.0
+offset_bottom = 306.0
 text = "Morality and Money Appear here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Enemy Morality" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 270.0
+offset_right = 599.0
+offset_bottom = 319.0
+text = "Enemy Morality and Money Appear here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Round Counter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 86.0
+offset_right = 614.0
+offset_bottom = 135.0
+text = "Round: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

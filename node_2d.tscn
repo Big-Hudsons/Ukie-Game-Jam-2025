@@ -38,6 +38,7 @@ offset_bottom = 176.0
 text = "Option 2"
 
 [node name="Morality" type="Label" parent="."]
+layout_mode = 0
 offset_left = 273.0
 offset_top = 279.0
 offset_right = 313.0

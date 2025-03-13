@@ -4,9 +4,9 @@ var current_question_index = -1
 var current_question = null
 var morality = 0
 var money = 100
-
 var emorality = 0
 var emoney = 100
+var roundCounter = 0
 
 func _ready():
 	randomize()
@@ -33,14 +33,16 @@ func update_question_display():
 				print("Button Count Error")
 
 func update_display():
-	$Morality.text = "Player Morality: %d\nPlayer Money: %d\n Enemy Morality: %d\nEnemy Money: %d" % [morality, money, emorality,emoney]
-
+	$"Player Morality".text = "Player Morality: %d\nPlayer Money: %d" % [morality, money]
+	$"Enemy Morality".text = "Enemy Morality: %d\nEnemy Money: %d" % [emorality,emoney]
+	$"Round Counter".text = "Round: " + str(roundCounter)
 
 func calculation(Player_Choice):
 	# Player Choice
 	var player_calc = current_question["responses"][Player_Choice]["effects"]
 	morality += player_calc.get("morality", 0)
 	money += player_calc.get("money", 0)
+	roundCounter += 1
 
 #Enemy Takes the other option
 #This give either choice 1 or 0 depending on what the player chose

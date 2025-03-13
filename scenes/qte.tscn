@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cs3ngpney0awe" path="res://assets/qte/QTE_Progress_bar.png" id="1_lbcdu"]
 [ext_resource type="Texture2D" uid="uid://c4g7tdpx5hyx3" path="res://assets/qte/QTE_Progress_bar_hollow.png" id="2_1k5uo"]
 [ext_resource type="Texture2D" uid="uid://d0hm6v0vt776i" path="res://assets/qte/CollisionZoneFilled.png" id="2_e5op3"]
-[ext_resource type="Script" uid="uid://c5fbrbdy2iy22" path="res://scripts/qte.gd" id="3_e5op3"]
+[ext_resource type="Script" path="res://scripts/qte.gd" id="3_e5op3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7wat3"]
 
@@ -46,7 +46,6 @@ mesh = SubResource("BoxMesh_7wat3")
 
 [node name="StaticBody2D" type="Area2D" parent="Rotating Indicator/MeshInstance2D"]
 position = Vector2(0, -4.76837e-07)
-scale = Vector2(1, 1)
 disable_mode = 2
 collision_layer = 255
 collision_mask = 0
