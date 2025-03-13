@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var rotating_indicator: Node2D = $"Rotating Indicator"
+@onready var qte_zone: Sprite2D = $"../qteZone"
 
 
 
@@ -8,7 +9,9 @@ extends Node2D
 @export var isSuccess : bool = true	
 @export var rotate : float = 1.0
 @export var speed : float = 100.0
+var qtePosistion : float  = 0
 func _ready() -> void:
+	qte_zone.rotation = randf_range(0.0,360.0)
 	pass
 	
 
