@@ -1,0 +1,40 @@
+[
+  {
+	"question": "How would you plan on dealing with the moon?",
+	"responses": [
+	  {
+		"text": "Blow it up for longer days",
+		"effects": {
+		  "money": -30,
+		  "morality": -4
+		}
+	  },
+	  {
+		"text": "Make a second moon for longer nights",
+		"effects": {
+		  "money": 0,
+		  "morality": 20
+		}
+	  }
+	]
+  },
+  {
+	"question": "How will you handle the pony crisis?",
+	"responses": [
+	  {
+		"text": "Every family should get one from the Govenment",
+		"effects": {
+		  "money": -60,
+		  "morality": 10
+		}
+	  },
+	  {
+		"text": "Ponies should be outlawed and deported to a uninhabitable island",
+		"effects": {
+		  "money": -10,
+		  "morality": -15
+		}
+	  }
+	]
+  }
+]
