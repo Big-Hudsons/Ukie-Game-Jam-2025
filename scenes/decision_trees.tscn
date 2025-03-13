@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://oygpvac1kr2b"]
+
+[ext_resource type="PackedScene" uid="uid://qaroq11k54xf" path="res://scenes/decision_boxes.tscn" id="1_xvgr1"]
+
+[node name="DecisionTrees" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 132.0
+offset_right = 333.0
+offset_bottom = 173.0
+theme_override_constants/separation = 41
+vertical = true
+
+[node name="DecisionBoxes" parent="BoxContainer" instance=ExtResource("1_xvgr1")]
+layout_mode = 2
+
+[node name="DecisionBoxes2" parent="BoxContainer" instance=ExtResource("1_xvgr1")]
+layout_mode = 2

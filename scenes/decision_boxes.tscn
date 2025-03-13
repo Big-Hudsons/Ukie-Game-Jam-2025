@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://qaroq11k54xf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_javii"]
+bg_color = Color(0, 0.079982, 0.2361, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wc7l"]
+bg_color = Color(0, 0.212899, 0.522747, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycmqe"]
+bg_color = Color(0.217333, 0.519592, 0.999996, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pmkm"]
+bg_color = Color(0, 0.344899, 0.807514, 1)
+
+[sub_resource type="GDScript" id="GDScript_4pmkm"]
+resource_name = "decision_box"
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	pass # Replace with function body.
+"
+
+[node name="DecisionBoxes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_javii")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1wc7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ycmqe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4pmkm")
+text = "Option A"
+script = SubResource("GDScript_4pmkm")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
