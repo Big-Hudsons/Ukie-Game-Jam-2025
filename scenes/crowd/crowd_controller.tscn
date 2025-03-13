@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://q3aksw1k53mb"]
 
-[ext_resource type="Script" uid="uid://cvhekkjumeboo" path="res://scripts/crowd_controller2.gd" id="1_1qwu7"]
+[ext_resource type="Script" uid="uid://bfovbq0v1ur8t" path="res://scripts/crowd_controller.gd" id="1_1qwu7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qwu7"]
 size = Vector2(160.5, 81)
@@ -13,30 +13,28 @@ size = Vector2(160.5, 81)
 
 [node name="CrowdController" type="Node"]
 script = ExtResource("1_1qwu7")
+crowdDensity = 69
 
 [node name="Area1" type="Area2D" parent="."]
+position = Vector2(130, 287)
 monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area1"]
-position = Vector2(117, 260)
 shape = SubResource("RectangleShape2D_1qwu7")
 
 [node name="Area2" type="Area2D" parent="."]
+position = Vector2(317, 286)
 monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2"]
-position = Vector2(284, 259)
 shape = SubResource("RectangleShape2D_36brd")
 
 [node name="Area3" type="Area2D" parent="."]
+position = Vector2(504, 287)
 monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area3"]
-position = Vector2(451, 259)
 shape = SubResource("RectangleShape2D_p5kr5")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(299, 148)
