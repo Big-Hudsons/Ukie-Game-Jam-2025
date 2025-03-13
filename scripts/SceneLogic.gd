@@ -31,7 +31,7 @@ func update_question_display():
 				print("Button Count Error")
 
 func update_display():
-	$Morality.text = "Morality: %d\n Money: %d" % [morality,money]
+	$Morality.text = "Morality: %d\nMoney: %d" % [morality,money]
 
 
 func calculation(effects):
