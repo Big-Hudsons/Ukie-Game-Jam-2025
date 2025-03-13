@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq5moorvpfwfh"]
+
+[ext_resource type="Texture2D" uid="uid://cs3ngpney0awe" path="res://assets/qte/QTE_Progress_bar.png" id="1_8un81"]
+[ext_resource type="Texture2D" uid="uid://c4g7tdpx5hyx3" path="res://assets/qte/QTE_Progress_bar_hollow.png" id="2_1iuoo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 8.0
+fill_mode = 4
+texture_under = ExtResource("1_8un81")
+texture_over = ExtResource("2_1iuoo")
+texture_progress = ExtResource("1_8un81")
+tint_under = Color(0, 0, 0, 0.447059)
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(1, 0.456561, 0.428234, 1)
