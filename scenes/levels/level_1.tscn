@@ -1,3 +1,73 @@
-[gd_scene format=3 uid="uid://coktl6mo5hp35"]
+[gd_scene load_steps=7 format=3 uid="uid://coktl6mo5hp35"]
+
+[ext_resource type="Texture2D" uid="uid://bx8ikh03bjokf" path="res://assets/Blue Banner.png" id="1_nsrm0"]
+[ext_resource type="Texture2D" uid="uid://bxsgtqgl8njld" path="res://assets/Red Banner.png" id="2_x42e6"]
+[ext_resource type="Texture2D" uid="uid://bx8mp5bf7gw5h" path="res://assets/blueUIDiamond.png" id="3_6761a"]
+[ext_resource type="Texture2D" uid="uid://cdxwipanwkb07" path="res://assets/moralitySymbol.png" id="4_sk5k4"]
+[ext_resource type="Texture2D" uid="uid://dmamx315mbaws" path="res://assets/moneySymbol.png" id="5_oc4kc"]
+[ext_resource type="Texture2D" uid="uid://b856x47dci6j3" path="res://assets/redUIDiamond.png" id="6_s8va5"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="BlueBanner" type="Sprite2D" parent="."]
+position = Vector2(180, 23)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_nsrm0")
+
+[node name="RedBanner" type="Sprite2D" parent="."]
+position = Vector2(462, 23)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_x42e6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 9.0
+offset_top = 104.0
+offset_right = 49.0
+offset_bottom = 144.0
+theme_override_constants/separation = -4420
+
+[node name="BlueUiDiamond" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(26, 12)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_6761a")
+
+[node name="MoralitySymbol" type="Sprite2D" parent="VBoxContainer/BlueUiDiamond"]
+position = Vector2(1.19209e-06, 20.8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_sk5k4")
+
+[node name="BlueUiDiamond2" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(26, 92)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_6761a")
+
+[node name="MoneySymbol" type="Sprite2D" parent="VBoxContainer/BlueUiDiamond2"]
+position = Vector2(0.8, 22.4)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_oc4kc")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 589.0
+offset_top = 89.0
+offset_right = 629.0
+offset_bottom = 129.0
+
+[node name="RedUiDiamond" type="Sprite2D" parent="VBoxContainer2"]
+position = Vector2(16, 27)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_s8va5")
+
+[node name="MoralitySymbol" type="Sprite2D" parent="VBoxContainer2/RedUiDiamond"]
+position = Vector2(1.19209e-06, 20.8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_sk5k4")
+
+[node name="RedUiDiamond2" type="Sprite2D" parent="VBoxContainer2"]
+position = Vector2(16, 105)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_s8va5")
+
+[node name="MoneySymbol" type="Sprite2D" parent="VBoxContainer2/RedUiDiamond2"]
+position = Vector2(0.8, 22.4)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_oc4kc")
