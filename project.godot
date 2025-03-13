@@ -14,7 +14,6 @@ config/name="Ukie Games GameJam Big Hudsons"
 config/version="1.0"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 run/max_fps=60
-config/icon="res://assets/temp_asset.svg"
 
 [display]
 
@@ -27,10 +26,6 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Ukie Games GameJam Big Hudsons"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot-4-importality-ecc9baa4561de8076e73f68636fee5274ac3a6b9/addons/nklbdev.importality/plugin.cfg")
 
 [file_customization]
 
