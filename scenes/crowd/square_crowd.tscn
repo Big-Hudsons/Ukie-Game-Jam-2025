@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvmgwwwxby75g"]
+
+[ext_resource type="Texture2D" uid="uid://bfuof3tp5h3lx" path="res://assets/crowd/square_crowd_member-sheet.png" id="1_6vnbe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vnbe"]
+atlas = ExtResource("1_6vnbe")
+region = Rect2(0, 0, 43, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxusl"]
+atlas = ExtResource("1_6vnbe")
+region = Rect2(43, 0, 43, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oshmp"]
+atlas = ExtResource("1_6vnbe")
+region = Rect2(86, 0, 43, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia2bd"]
+atlas = ExtResource("1_6vnbe")
+region = Rect2(129, 0, 43, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtc4f"]
+atlas = ExtResource("1_6vnbe")
+region = Rect2(172, 0, 43, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt50k"]
+atlas = ExtResource("1_6vnbe")
+region = Rect2(215, 0, 43, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_icxn2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vnbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxusl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oshmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia2bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtc4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt50k")
+}],
+"loop": false,
+"name": &"question",
+"speed": 5.0
+}]
+
+[node name="Square Crowd" type="Marker2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_icxn2")
+animation = &"idle"
+autoplay = "idle"
