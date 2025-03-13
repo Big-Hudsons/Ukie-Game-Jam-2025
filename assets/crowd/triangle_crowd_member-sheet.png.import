@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/Red Banner.png.import
-uid="uid://bxsgtqgl8njld"
-path="res://.godot/imported/Red Banner.png-5d4f3f9da6659bdba130a9be1703375e.ctex"
-========
-uid="uid://x7nhawgepd2n"
+uid="uid://crqbrvx5nlx5u"
 path="res://.godot/imported/triangle_crowd_member-sheet.png-2e6cf835bea307bb249d0ded9c0c15c1.ctex"
->>>>>>>> codys-branch:assets/crowd/triangle_crowd_member-sheet.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/Red Banner.png.import
-source_file="res://assets/Red Banner.png"
-dest_files=["res://.godot/imported/Red Banner.png-5d4f3f9da6659bdba130a9be1703375e.ctex"]
-========
 source_file="res://assets/crowd/triangle_crowd_member-sheet.png"
 dest_files=["res://.godot/imported/triangle_crowd_member-sheet.png-2e6cf835bea307bb249d0ded9c0c15c1.ctex"]
->>>>>>>> codys-branch:assets/crowd/triangle_crowd_member-sheet.png.import
 
 [params]
 
