@@ -34,35 +34,66 @@ func _generate_crowd():
 
 func _populate():
 	var areaDivi : int = 1
+	var loopCount : int = 0
 	for crowd in crowdArray:
+		loopCount = loopCount + 1
+		var square = squareCrowd.instantiate()
+		var triangle = triangleCrowd.instantiate()
 		if areaDivi == 1:
 			if crowd == 0:
-				add_child(squareCrowd.instantiate().transform.position($Marker2D.transform.position))
+				square.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				square.name = ("Square Crowd " + str(loopCount))
+				add_child(square)
 				areaDivi = areaDivi + 1
+				continue
 			if crowd == 1:
-				add_child(triangleCrowd.instantiate().transform.position($Marker2D.transform.position))
+				triangle.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				triangle.name = ("triangle Crowd " + str(loopCount))
+				add_child(triangle)
 				areaDivi = areaDivi + 1
+				continue
 			else:
-				add_child(squareCrowd.instantiate().transform.position($Marker2D.transform.position))
+				square.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				square.name = ("Square Crowd " + str(loopCount))
+				add_child(square)
 				areaDivi = areaDivi + 1
+				continue
 		if areaDivi == 2:
 			if crowd == 0:
-				add_child(squareCrowd.instantiate().transform.position($Marker2D.transform.position))
+				square.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				square.name = ("Square Crowd " + str(loopCount))
+				add_child(square)
 				areaDivi = areaDivi + 1
+				continue
 			if crowd == 1:
-				add_child(triangleCrowd.instantiate().transform.position($Marker2D.transform.position))
+				triangle.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				triangle.name = ("triangle Crowd " + str(loopCount))
+				add_child(triangle)
 				areaDivi = areaDivi + 1
+				continue
 			else:
-				add_child(squareCrowd.instantiate().transform.position($Marker2D.transform.position))
+				square.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				square.name = ("Square Crowd " + str(loopCount))
+				add_child(square)
 				areaDivi = areaDivi + 1
+				continue
 		if areaDivi == 3:
 			if crowd == 0:
-				add_child(squareCrowd.instantiate().transform.position($Marker2D.transform.position))
-				areaDivi = areaDivi + 1
+				square.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				square.name = ("Square Crowd " + str(loopCount))
+				add_child(square)
+				areaDivi = 1
+				continue
 			if crowd == 1:
-				add_child(triangleCrowd.instantiate().transform.position($Marker2D.transform.position))
-				areaDivi = areaDivi + 1
+				triangle.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				triangle.name = ("triangle Crowd " + str(loopCount))
+				add_child(triangle)
+				areaDivi = 1
+				continue
 			else:
-				add_child(squareCrowd.instantiate().transform.position($Marker2D.transform.position))
-				areaDivi = areaDivi + 1
+				square.position = Vector2($Marker2D.position.x, $Marker2D.position.y)
+				square.name = ("Square Crowd " + str(loopCount))
+				add_child(square)
+				areaDivi = 1
+				continue
 	print("Done")
