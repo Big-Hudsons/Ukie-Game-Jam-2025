@@ -60,4 +60,4 @@ animations = [{
 [node name="Triangle Crowd" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_gfixx")
 animation = &"idle"
-frame_progress = 0.748898
+frame_progress = 0.270498
