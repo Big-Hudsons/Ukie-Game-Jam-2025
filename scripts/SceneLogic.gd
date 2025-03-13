@@ -1,9 +1,12 @@
-extends Node2D
+extends Control
 
 var current_question_index = -1
 var current_question = null
 var morality = 0
 var money = 100
+
+var emorality = 0
+var emoney = 100
 
 func _ready():
 	randomize()
@@ -19,10 +22,9 @@ func load_new_question():
 func update_question_display():
 	if current_question:
 		$"Button Control/Label".text = current_question["question"]
-		
+
 		var responses = current_question["responses"]
-		
-		
+
 		for i in range(responses.size()):
 			var button = get_node("Button Control/Response" + str(i+1))
 			if button:
@@ -31,25 +33,31 @@ func update_question_display():
 				print("Button Count Error")
 
 func update_display():
-	$Morality.text = "Morality: %d\n Money: %d" % [morality,money]
+	$Morality.text = "Player Morality: %d\nPlayer Money: %d\n Enemy Morality: %d\nEnemy Money: %d" % [morality, money, emorality,emoney]
 
 
-func calculation(effects):
-	morality += effects.get("morality", 0)
-	money += effects.get("money", 0)
+func calculation(Player_Choice):
+	# Player Choice
+	var player_calc = current_question["responses"][Player_Choice]["effects"]
+	morality += player_calc.get("morality", 0)
+	money += player_calc.get("money", 0)
+
+#Enemy Takes the other option
+#This give either choice 1 or 0 depending on what the player chose
+	var Enemy_Choice = 1 - Player_Choice
+	var enemy_calc = current_question["responses"][Enemy_Choice]["effects"]
+	emorality += enemy_calc.get("morality", 0)
+	emoney += enemy_calc.get("money", 0)
+
 	update_display()
 	load_new_question()
 
 
 func _on_response_1_pressed() -> void:
 	if current_question:
-		var effects = current_question["responses"][0]["effects"]
-		calculation(effects)
-
-
+		calculation(0) 
+#this makes choice one 0
 func _on_response_2_pressed() -> void:
 	if current_question:
 		calculation(1)
-# this makes choice two 1
-		var effects = current_question["responses"][1]["effects"]
-		calculation(effects)
+#this makes choice two 1
