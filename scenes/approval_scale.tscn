@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl5t5jh24kwwk"]
 
-[ext_resource type="Script" uid="uid://co7vtmrx1l5oa" path="res://scripts/approval.gd" id="1_b3p2m"]
+[ext_resource type="Script" uid="uid://co7vtmrx1l5oa" path="res://scripts/Approval.gd" id="1_b3p2m"]
 [ext_resource type="StyleBox" uid="uid://p8j3qffp77l0" path="res://assets/approval/new_style_box_line.tres" id="1_ojc5a"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ojc5a"]
@@ -36,3 +36,4 @@ offset_bottom = 359.0
 theme_override_styles/slider = SubResource("StyleBoxLine_ojc5a")
 theme_override_styles/grabber_area = ExtResource("1_ojc5a")
 theme_override_styles/grabber_area_highlight = ExtResource("1_ojc5a")
+editable = false
