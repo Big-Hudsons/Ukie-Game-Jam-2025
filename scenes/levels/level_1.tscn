@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://coktl6mo5hp35"]
+[gd_scene load_steps=15 format=3 uid="uid://coktl6mo5hp35"]
 
 [ext_resource type="Texture2D" uid="uid://dwrp1t35fdahi" path="res://assets/ui/presidentialDebateArena.png" id="1_ksju7"]
 [ext_resource type="Texture2D" uid="uid://dugaatxvv4f8f" path="res://assets/ui/bluePodium.png" id="2_nsrm0"]
@@ -10,12 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://bj0hmg7gx8yhu" path="res://assets/ui/prototypeMoralSymbol2.png" id="7_dga24"]
 [ext_resource type="Texture2D" uid="uid://bvl13uv1dqf7x" path="res://assets/ui/prototypeMoneySymbol2.png" id="8_dga24"]
 [ext_resource type="StyleBox" uid="uid://p8j3qffp77l0" path="res://assets/approval/new_style_box_line.tres" id="9_dga24"]
+[ext_resource type="StyleBox" uid="uid://c1b3g60634bxa" path="res://assets/approval/apporval_scale_red.tres" id="10_excbq"]
 [ext_resource type="PackedScene" uid="uid://q3aksw1k53mb" path="res://scenes/crowd/crowd_controller.tscn" id="11_excbq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qxy0u"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_excbq"]
-color = Color(0, 0.50749, 0.787791, 1)
+color = Color(0.993046, 0, 0.165028, 1)
 thickness = 10
 
 [node name="Level1" type="Node2D"]
@@ -211,8 +212,8 @@ autowrap_mode = 3
 follow_viewport_enabled = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Approval/CanvasLayer"]
-position = Vector2(319.5, 344)
-scale = Vector2(637, 32)
+position = Vector2(311.5, 345.5)
+scale = Vector2(673, 35)
 mesh = SubResource("QuadMesh_qxy0u")
 
 [node name="Label" type="Label" parent="Approval/CanvasLayer"]
@@ -230,7 +231,7 @@ offset_right = 633.0
 offset_bottom = 359.0
 theme_override_styles/slider = SubResource("StyleBoxLine_excbq")
 theme_override_styles/grabber_area = ExtResource("9_dga24")
-theme_override_styles/grabber_area_highlight = ExtResource("9_dga24")
+theme_override_styles/grabber_area_highlight = ExtResource("10_excbq")
 editable = false
 scrollable = false
 

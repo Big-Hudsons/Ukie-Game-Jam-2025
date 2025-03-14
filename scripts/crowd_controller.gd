@@ -119,19 +119,23 @@ func _random_area_pos(area: Area2D):
 
 
 func _on_decision_making_load_question(approval) -> void:
+	var approvalLoop = approval
 	for c in $".".get_children():
 		if c.has_node("AnimatedSprite2D"):
 			var animS = c.get_node("AnimatedSprite2D")
-			#for every approval
-			for a in approval:
-				#if it has a material
-				if animS.material != null:
+			if animS.material != null:
 					#if that matterial is the red shader
 					#animS.material.shader = null
-					animS.material.shader = RED
-				if animS.material == null:
-					animS.material.shader = RED
-				else:
-					pass
+				animS.material = animS.material.duplicate()
+				animS.material.shader = RED
 		else: 
 			continue
+	#BLUE shader Generation
+	for c in $".".get_children():
+		if c.has_node("AnimatedSprite2D"):
+			var animS = c.get_node("AnimatedSprite2D")
+			if approvalLoop > 0:
+					animS.material = animS.material.duplicate()
+					animS.material.shader = BLUE
+					approvalLoop = approvalLoop - 1
+					continue
