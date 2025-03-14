@@ -10,11 +10,18 @@ config_version=5
 
 [application]
 
-config/name="Ukie Games GameJam Big Hudsons"
+config/name="Not* a Political Game - Big Hudsons"
+config/description="​Play as a Presidential cantidate in a fictional parrallel of our world. Promise increasingly obsurd things against your political opponent to win over the public.  Your opponent will always take the complete opposing​ stance that you take.
+
+DISCLAIMER -- This game is not meant to represent any real life equivilants, it is a satire that uses comedic extremes for entertainment. Any conclusions you may come to about any intended political stances this game makes is purely your own speculation and not intended by the development team. 
+
+Citations
+Eagle SFX - https://pixabay.com/sound-effects/search/eagle/​"
 config/version="1.0"
 run/main_scene="uid://bjo3te5c57484"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 run/max_fps=60
+boot_splash/image="uid://b7r8xact4qjcy"
 
 [autoload]
 
