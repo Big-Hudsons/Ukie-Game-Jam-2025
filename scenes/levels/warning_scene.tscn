@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://74u7x02oeyss"]
+
+[ext_resource type="Script" uid="uid://bb3r8n84drad0" path="res://scripts/ui/warning_scene.gd" id="1_a4voj"]
+
+[node name="WarningScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4voj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16, 9)
+color = Color(0, 0, 0, 1)
+
+[node name="Warning" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 98.0
+offset_right = 886.0
+offset_bottom = 1586.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 46
+text = "NOTICE: "
+fit_content = true
+
+[node name="Warning2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 175.0
+offset_right = 615.0
+offset_bottom = 221.0
+text = "This game is meant to be a satire on politics and isn't meant to be comment on any real life parallels, this is just for fun :)"
+fit_content = true
+horizontal_alignment = 1
