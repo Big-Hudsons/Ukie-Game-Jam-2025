@@ -8,6 +8,10 @@ var crowdMem : int
 var squareCrowd = preload("res://scenes/crowd/square_crowd.tscn")
 var triangleCrowd = preload("res://scenes/crowd/triangle_crowd.tscn")
 
+#shaders
+const BLUE = preload("res://shaders/Blue.gdshader")
+const RED = preload("res://shaders/Red.gdshader")
+
 #Crowd Areas
 @onready var area_1: Area2D = $Area1
 @onready var area_2: Area2D = $Area2
@@ -96,7 +100,6 @@ func _populate():
 				add_child(square)
 				areaDivi = 1
 				continue
-	print("Done")
 
 func _random_area_pos(area: Area2D):
 	#var spawnArea = area.child.name == CollisionShape2D.shape.get_rect().get_area()
@@ -115,9 +118,9 @@ func _random_area_pos(area: Area2D):
 	return Vector2(x, y)
 
 
-func _on_decision_making_load_question() -> void:
+func _on_decision_making_load_question(approval) -> void:
 	for c in $".".get_children():
 		if c.has_node("AnimatedSprite2D"):
-			print("true")
+			var animS = c.get_node("AnimatedSprite2D")
 		else: 
-			print("false")
+			continue

@@ -11,7 +11,7 @@ var approval = 0
 var gameOver = false
 
 #signals
-signal load_question
+signal load_question(approval)
 signal question_asked
 
 func _ready():
@@ -26,7 +26,7 @@ func load_new_question():
 		current_question_index = randi() % QuestionData.Questions.size()
 		current_question = QuestionData.Questions[current_question_index]
 		update_question_display()
-		emit_signal("load_question")
+		emit_signal("load_question", calculate_approval())
 
 
 func update_question_display():
