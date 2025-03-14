@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://coktl6mo5hp35"]
+[gd_scene load_steps=17 format=3 uid="uid://coktl6mo5hp35"]
 
 [ext_resource type="Texture2D" uid="uid://dwrp1t35fdahi" path="res://assets/ui/presidentialDebateArena.png" id="1_ksju7"]
+[ext_resource type="Texture2D" uid="uid://ulbry7s6kvva" path="res://assets/characters/blueCandidate.png" id="2_iav0o"]
 [ext_resource type="Texture2D" uid="uid://dugaatxvv4f8f" path="res://assets/ui/bluePodium.png" id="2_nsrm0"]
-[ext_resource type="Texture2D" uid="uid://dloeykwr8uodb" path="res://assets/characters/blueCanadit.png" id="3_dga24"]
 [ext_resource type="Texture2D" uid="uid://noi6hbra0t4t" path="res://assets/ui/redPodium.png" id="3_x42e6"]
+[ext_resource type="Texture2D" uid="uid://texsa714kscj" path="res://assets/characters/redCandidate.png" id="4_dnkej"]
 [ext_resource type="Script" uid="uid://bhlsgh1smh4d7" path="res://scenes/decision_making.gd" id="5_6761a"]
 [ext_resource type="Texture2D" uid="uid://bv4ykfkkjcgmo" path="res://assets/ui/prototypeMoralSymbol.png" id="5_s8va5"]
 [ext_resource type="Texture2D" uid="uid://cfjsm1r0v2r4l" path="res://assets/ui/prototypeMoneySymbol.png" id="6_s8va5"]
@@ -31,15 +32,19 @@ position = Vector2(321, 179)
 scale = Vector2(2, 2)
 texture = ExtResource("1_ksju7")
 
+[node name="BlueCandidate" type="Sprite2D" parent="."]
+position = Vector2(224, 117)
+texture = ExtResource("2_iav0o")
+
 [node name="BluePodium" type="Sprite2D" parent="."]
 position = Vector2(225.25, 149.75)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_nsrm0")
 
-[node name="BlueCanadit" type="Sprite2D" parent="."]
+[node name="RedCandidate" type="Sprite2D" parent="."]
 position = Vector2(416, 125)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_dga24")
+texture = ExtResource("4_dnkej")
 
 [node name="RedPodium" type="Sprite2D" parent="."]
 position = Vector2(417, 157)
@@ -190,6 +195,7 @@ bbcode_enabled = true
 text = "This is where the question will appear"
 
 [node name="RoundCounter" type="RichTextLabel" parent="DecisionMaking/Button Control"]
+layout_mode = 0
 offset_left = 266.0
 offset_top = 20.0
 offset_right = 385.0

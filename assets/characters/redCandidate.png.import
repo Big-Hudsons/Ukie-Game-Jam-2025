@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dloeykwr8uodb"
-path="res://.godot/imported/blueCanadit.png-559cdf539ef59200982e983b7bc54da7.ctex"
+uid="uid://texsa714kscj"
+path="res://.godot/imported/redCandidate.png-c538f7be9dd895dc250e761100f0e04a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/blueCanadit.png"
-dest_files=["res://.godot/imported/blueCanadit.png-559cdf539ef59200982e983b7bc54da7.ctex"]
+source_file="res://assets/characters/redCandidate.png"
+dest_files=["res://.godot/imported/redCandidate.png-c538f7be9dd895dc250e761100f0e04a.ctex"]
 
 [params]
 
