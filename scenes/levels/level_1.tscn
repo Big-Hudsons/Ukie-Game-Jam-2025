@@ -253,28 +253,8 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "Round"
 
-[node name="Game Over" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GameOverLabel" type="Label" parent="Game Over"]
-layout_mode = 0
-offset_left = 276.0
-offset_top = 193.0
-offset_right = 392.0
-offset_bottom = 216.0
-text = "txt will be here"
-
-[node name="MoveToMainMenu" type="Button" parent="Game Over"]
-layout_mode = 0
-offset_left = 259.0
-offset_top = 218.0
-offset_right = 422.0
-offset_bottom = 255.0
-text = "Main Menu"
-
+[connection signal="update_crowd" from="DecisionMaking" to="CrowdController" method="_on_decision_making_load_question"]
+[connection signal="pressed" from="DecisionMaking/GameUI/Game Over/GameOverButton" to="DecisionMaking" method="_on_game_over_button_pressed"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response2" to="DecisionMaking" method="_on_response_2_pressed"]
 [connection signal="pressed" from="Game Over/MoveToMainMenu" to="DecisionMaking" method="_on_move_to_main_menu_pressed"]
