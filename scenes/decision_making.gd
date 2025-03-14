@@ -10,6 +10,10 @@ var roundCounter = 0
 var approval = 0
 var gameOver = false
 
+#signals
+signal load_question(approval)
+signal question_asked
+
 func _ready():
 	randomize()
 	load_new_question()
@@ -22,6 +26,7 @@ func load_new_question():
 		current_question_index = randi() % QuestionData.Questions.size()
 		current_question = QuestionData.Questions[current_question_index]
 		update_question_display()
+		emit_signal("load_question", calculate_approval())
 
 
 func update_question_display():
@@ -58,20 +63,17 @@ func calculation(Player_Choice):
 	money += player_calc.get("money", 0)
 	roundCounter += 1
 
-
 #Enemy Takes the other option
 #This give either choice 1 or 0 depending on what the player chose
 	var Enemy_Choice = 1 - Player_Choice
 	var enemy_calc = current_question["responses"][Enemy_Choice]["effects"]
 	emorality += enemy_calc.get("morality", 0)
 	emoney += enemy_calc.get("money", 0)
-	
 	update_display()
 	
 	if roundCounter >= 10:
 		calculate_approval()
 		GameOver()
-		return
 		
 	if not gameOver:
 		load_new_question()
