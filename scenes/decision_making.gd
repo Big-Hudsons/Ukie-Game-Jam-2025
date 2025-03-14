@@ -100,7 +100,8 @@ func gameResult():
 	%GameOverLabel.visible = true
 	%GameOverLabel.text = Result
 	%GameOverButton.visible = true
-	
+	$"Button Control/Response2".visible = false
+	$"Button Control/Response1".visible = false
 
 func _on_response_1_pressed() -> void:
 	if current_question:

@@ -271,26 +271,26 @@ offset_bottom = 40.0
 [node name="GameOverLabel" type="Label" parent="GameOver"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 274.0
-offset_top = 188.0
-offset_right = 364.0
-offset_bottom = 211.0
+offset_left = 262.0
+offset_top = 106.0
+offset_right = 352.0
+offset_bottom = 129.0
+theme_override_constants/outline_size = 2
 text = "Main Menu"
 
 [node name="GameOverButton" type="Button" parent="GameOver"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 219.0
-offset_top = 210.0
-offset_right = 428.0
-offset_bottom = 252.0
+offset_left = 151.0
+offset_top = 128.0
+offset_right = 501.0
+offset_bottom = 188.0
 text = "Main Menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_bahl2")
 volume_db = -15.928
 autoplay = true
-stream_paused = true
 parameters/looping = true
 
 [connection signal="update_crowd" from="DecisionMaking" to="CrowdController" method="_on_decision_making_load_question"]
