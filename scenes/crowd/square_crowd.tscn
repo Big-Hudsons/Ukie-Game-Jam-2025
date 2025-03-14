@@ -65,6 +65,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_uxusl")
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_icxn2")
 animation = &"question"
 autoplay = "idle"

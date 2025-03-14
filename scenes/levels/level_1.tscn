@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://coktl6mo5hp35"]
+[gd_scene load_steps=20 format=3 uid="uid://coktl6mo5hp35"]
 
 [ext_resource type="Texture2D" uid="uid://dwrp1t35fdahi" path="res://assets/ui/presidentialDebateArena.png" id="1_ksju7"]
-[ext_resource type="Script" uid="uid://bsyf7smyx3d7e" path="res://scenes/levels/pause_controller.gd" id="1_mm8aj"]
+[ext_resource type="Script" path="res://scenes/levels/pause_controller.gd" id="1_mm8aj"]
 [ext_resource type="Texture2D" uid="uid://ulbry7s6kvva" path="res://assets/characters/blueCandidate.png" id="2_iav0o"]
 [ext_resource type="Texture2D" uid="uid://dugaatxvv4f8f" path="res://assets/ui/bluePodium.png" id="2_nsrm0"]
 [ext_resource type="Texture2D" uid="uid://noi6hbra0t4t" path="res://assets/ui/redPodium.png" id="3_x42e6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bvl13uv1dqf7x" path="res://assets/ui/prototypeMoneySymbol2.png" id="8_dga24"]
 [ext_resource type="StyleBox" uid="uid://p8j3qffp77l0" path="res://assets/approval/new_style_box_line.tres" id="9_dga24"]
 [ext_resource type="FontFile" uid="uid://ci1axvndqptpx" path="res://assets/fonts/Kanit-Medium.ttf" id="10_excbq"]
+[ext_resource type="PackedScene" uid="uid://q3aksw1k53mb" path="res://scenes/crowd/crowd_controller.tscn" id="11_excbq"]
 [ext_resource type="PackedScene" uid="uid://dcg1jc1n7ccwf" path="res://scenes/ui/pause_menu.tscn" id="14_wtwp4"]
 
 [sub_resource type="FontVariation" id="FontVariation_iav0o"]
@@ -24,7 +25,7 @@ default_font = SubResource("FontVariation_iav0o")
 [sub_resource type="QuadMesh" id="QuadMesh_qxy0u"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_excbq"]
-color = Color(0, 0.50749, 0.787791, 1)
+color = Color(0.89449, 0, 0.258401, 1)
 thickness = 10
 
 [node name="Level1" type="Node2D"]
@@ -217,6 +218,7 @@ bbcode_enabled = true
 text = "Round Counter"
 
 [node name="Approval Bar" type="Control" parent="DecisionMaking"]
+top_level = true
 layout_mode = 3
 anchors_preset = 0
 offset_left = 285.0
@@ -225,17 +227,19 @@ offset_right = 325.0
 offset_bottom = 367.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="DecisionMaking/Approval Bar"]
-position = Vector2(35.5, 17)
-scale = Vector2(639, 32)
+position = Vector2(34.5, 19)
+scale = Vector2(647, 36)
 mesh = SubResource("QuadMesh_qxy0u")
 
 [node name="Label" type="Label" parent="DecisionMaking/Approval Bar"]
+layout_mode = 0
 offset_right = 70.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Approval"
 
 [node name="HSlider" type="HSlider" parent="DecisionMaking/Approval Bar"]
+layout_mode = 0
 offset_left = -282.0
 offset_top = 16.0
 offset_right = 348.0
@@ -253,6 +257,7 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="DecisionMaking/Game Over"]
 visible = false
+layout_mode = 0
 offset_left = 302.0
 offset_top = 155.0
 offset_right = 342.0
@@ -276,6 +281,19 @@ visible = false
 offset_left = 1.0
 offset_right = 1.0
 
+[node name="CrowdController" parent="." instance=ExtResource("11_excbq")]
+
+[node name="CollisionShape2D" parent="CrowdController/Area1" index="0"]
+position = Vector2(-25, 23)
+
+[node name="CollisionShape2D" parent="CrowdController/Area2" index="0"]
+position = Vector2(2.5, 24)
+
+[node name="CollisionShape2D" parent="CrowdController/Area3" index="0"]
+position = Vector2(30, 24)
+
 [connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response2" to="DecisionMaking" method="_on_response_2_pressed"]
 [connection signal="pressed" from="DecisionMaking/Game Over/GameOverButton" to="DecisionMaking" method="_on_main_menu_button_pressed"]
+
+[editable path="CrowdController"]

@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bfovbq0v1ur8t" path="res://scripts/crowd_controller.gd" id="1_1qwu7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qwu7"]
-size = Vector2(208, 33)
+size = Vector2(208, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36brd"]
-size = Vector2(218, 32.5)
+size = Vector2(233, 34.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5kr5"]
-size = Vector2(209, 34)
+size = Vector2(212.5, 34)
 
 [node name="CrowdController" type="Node"]
 script = ExtResource("1_1qwu7")
