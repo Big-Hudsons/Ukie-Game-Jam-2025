@@ -33,8 +33,12 @@ func update_question_display():
 				print("Button Count Error")
 
 func update_display():
-	$"Player Morality".text = "Player Morality: %d\nPlayer Money: %d" % [morality, money]
-	$"Enemy Morality".text = "Enemy Morality: %d\nEnemy Money: %d" % [emorality,emoney]
+	#$"Player Morality".text = "Player Morality: %d\nPlayer Money: %d" % [morality, money]
+	#$"Enemy Morality".text = "Enemy Morality: %d\nEnemy Money: %d" % [emorality,emoney]
+	$GameUI/BlueSideUI/Morality/BlueMortalityText.text = "%d" % [morality] + "%"
+	$GameUI/BlueSideUI/Money/BlueMoneyText.text = "%d" % [money] + "M"
+	$GameUI/RedSide/Morality/RedMoralityText.text = "%d" % [emorality] + "%"
+	$GameUI/RedSide/Money/RedMoneyText.text = "%d" % [emoney] + "M"
 	$"Round Counter".text = "Round: " + str(roundCounter)
 
 func calculation(Player_Choice):
