@@ -122,5 +122,16 @@ func _on_decision_making_load_question(approval) -> void:
 	for c in $".".get_children():
 		if c.has_node("AnimatedSprite2D"):
 			var animS = c.get_node("AnimatedSprite2D")
+			#for every approval
+			for a in approval:
+				#if it has a material
+				if animS.material != null:
+					#if that matterial is the red shader
+					#animS.material.shader = null
+					animS.material.shader = RED
+				if animS.material == null:
+					animS.material.shader = RED
+				else:
+					pass
 		else: 
 			continue

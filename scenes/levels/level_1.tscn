@@ -246,13 +246,13 @@ offset_bottom = 8.0
 crowdDensity = 99
 
 [node name="CollisionShape2D" parent="CrowdController/Area1" index="0"]
-position = Vector2(-24.375, 23.75)
+position = Vector2(-26, 23.5)
 
 [node name="CollisionShape2D" parent="CrowdController/Area2" index="0"]
 position = Vector2(0, 24.25)
 
 [node name="CollisionShape2D" parent="CrowdController/Area3" index="0"]
-position = Vector2(27.375, 23.25)
+position = Vector2(27.5, 23)
 
 [connection signal="load_question" from="DecisionMaking" to="CrowdController" method="_on_decision_making_load_question"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]

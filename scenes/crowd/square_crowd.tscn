@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvmgwwwxby75g"]
+[gd_scene load_steps=10 format=3 uid="uid://cvmgwwwxby75g"]
 
 [ext_resource type="Texture2D" uid="uid://cqgtw55jt0waw" path="res://assets/crowd/square_crowd_member-sheet.png" id="1_6vnbe"]
+[ext_resource type="Material" uid="uid://bqos1prwfb13x" path="res://shaders/blank_material.tres" id="1_uxusl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6vnbe"]
 atlas = ExtResource("1_6vnbe")
@@ -60,6 +61,7 @@ animations = [{
 [node name="Square Crowd" type="Marker2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("1_uxusl")
 sprite_frames = SubResource("SpriteFrames_icxn2")
 animation = &"question"
 autoplay = "idle"

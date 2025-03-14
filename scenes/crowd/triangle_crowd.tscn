@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn57jpepr0fyh"]
+[gd_scene load_steps=10 format=3 uid="uid://cn57jpepr0fyh"]
 
-[ext_resource type="Texture2D" uid="uid://x7nhawgepd2n" path="res://assets/crowd/triangle_crowd_member-sheet.png" id="1_phk77"]
+[ext_resource type="Texture2D" uid="uid://crqbrvx5nlx5u" path="res://assets/crowd/triangle_crowd_member-sheet.png" id="1_phk77"]
+[ext_resource type="Material" uid="uid://bqos1prwfb13x" path="res://shaders/blank_material.tres" id="1_rik1m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phk77"]
 atlas = ExtResource("1_phk77")
@@ -60,6 +61,7 @@ animations = [{
 [node name="Triangle Crowd" type="Marker2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("1_rik1m")
 sprite_frames = SubResource("SpriteFrames_1gbjp")
 animation = &"idle"
 autoplay = "idle"
