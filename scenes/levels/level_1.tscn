@@ -57,13 +57,13 @@ texture = ExtResource("3_x42e6")
 [node name="CrowdController" parent="." instance=ExtResource("11_excbq")]
 
 [node name="CollisionShape2D" parent="CrowdController/Area1" index="0"]
-position = Vector2(-25, 23)
+position = Vector2(-25, 31.375)
 
 [node name="CollisionShape2D" parent="CrowdController/Area2" index="0"]
-position = Vector2(2.5, 24)
+position = Vector2(2.5, 32.4375)
 
 [node name="CollisionShape2D" parent="CrowdController/Area3" index="0"]
-position = Vector2(30, 24)
+position = Vector2(30, 32.5)
 
 [node name="DecisionMaking" type="Control" parent="."]
 layout_mode = 3
