@@ -26,7 +26,7 @@ func load_new_question():
 
 func update_question_display():
 	if current_question:
-		$"Button Control/RichTextLabel".text = current_question["question"]
+		$"Button Control/Question".text = current_question["question"]
 
 		var responses = current_question["responses"]
 
