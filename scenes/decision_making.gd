@@ -26,7 +26,7 @@ func load_new_question():
 
 func update_question_display():
 	if current_question:
-		$"Button Control/Label".text = current_question["question"]
+		$"Button Control/RichTextLabel".text = current_question["question"]
 
 		var responses = current_question["responses"]
 
@@ -43,8 +43,7 @@ func update_display():
 	$GameUI/BlueSideUI/Money/BlueMoney.text = "%d" % [money] + "M"
 	$GameUI/RedSide/Morality/RedMorality.text = "%d" % [emorality] + "%"
 	$GameUI/RedSide/Money/RedMoney.text = "%d" % [emoney] + "M"
-	
-	$"Round Counter".text = "Round: " + str(roundCounter)
+	$"Button Control/RoundCounter".text = "Round: " + str(roundCounter)
 	
 	approval = (morality + money) - (emorality + emoney)
 	approval = clamp(approval, 0, 100)
