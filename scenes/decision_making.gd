@@ -39,10 +39,11 @@ func update_question_display():
 
 
 func update_display():
-	$GameUI/BlueSideUI/Morality/BlueMortalityText.text = "%d" % [morality] + "%"
-	$GameUI/BlueSideUI/Money/BlueMoneyText.text = "%d" % [money] + "M"
-	$GameUI/RedSide/Morality/RedMoralityText.text = "%d" % [emorality] + "%"
-	$GameUI/RedSide/Money/RedMoneyText.text = "%d" % [emoney] + "M"
+	$GameUI/BlueSideUI/Morality/BlueMorality.text = "%d" % [morality] + "%"
+	$GameUI/BlueSideUI/Money/BlueMoney.text = "%d" % [money] + "M"
+	$GameUI/RedSide/Morality/RedMorality.text = "%d" % [emorality] + "%"
+	$GameUI/RedSide/Money/RedMoney.text = "%d" % [emoney] + "M"
+	
 	$"Round Counter".text = "Round: " + str(roundCounter)
 	
 	approval = (morality + money) - (emorality + emoney)
