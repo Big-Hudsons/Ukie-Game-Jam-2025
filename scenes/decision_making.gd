@@ -14,7 +14,7 @@ func _ready():
 	randomize()
 	load_new_question()
 	update_display()
-	$"../Approval/CanvasLayer/MainMenuButton".visible = false
+	$"Game Over/GameOverButton".visible = false
 
 
 func load_new_question():
@@ -47,7 +47,7 @@ func update_display():
 	
 	approval = (morality + money) - (emorality + emoney)
 	approval = clamp(approval, 0, 100)
-	$"../Approval/CanvasLayer/HSlider".value = approval
+	$"Approval Bar/HSlider".value = approval
 	
 
 
@@ -95,9 +95,9 @@ func disable_buttons():
 
 func gameResult():
 	var Result = "You %s! Approval: %d%%" % ["Win" if approval >= 50 else "Lose", approval]
-	$"../Approval/CanvasLayer/GameOver".visible  = true
-	$"../Approval/CanvasLayer/GameOver".text = Result
-	$"../Approval/CanvasLayer/MainMenuButton".visible = true
+	$"Game Over/Label".visible  = true
+	$"Game Over/Label".text = Result
+	$"Game Over/GameOverButton".visible = true
 
 func _on_response_1_pressed() -> void:
 	if current_question:
