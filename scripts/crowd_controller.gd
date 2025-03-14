@@ -9,8 +9,7 @@ var squareCrowd = preload("res://scenes/crowd/square_crowd.tscn")
 var triangleCrowd = preload("res://scenes/crowd/triangle_crowd.tscn")
 
 #shaders
-const BLUE = preload("res://shaders/Blue.gdshader")
-const RED = preload("res://shaders/Red.gdshader")
+const COLOR_CHANGE = preload("res://shaders/color_change.gdshader")
 
 #Crowd Areas
 @onready var area_1: Area2D = $Area1
@@ -127,7 +126,7 @@ func _on_decision_making_load_question(approval) -> void:
 					#if that matterial is the red shader
 					#animS.material.shader = null
 				animS.material = animS.material.duplicate()
-				animS.material.shader = RED
+				animS.material.set_shader_parameter("replace_color", Vector4(1,0,0,1))
 		else: 
 			continue
 	#BLUE shader Generation
@@ -136,6 +135,6 @@ func _on_decision_making_load_question(approval) -> void:
 			var animS = c.get_node("AnimatedSprite2D")
 			if approvalLoop > 0:
 					animS.material = animS.material.duplicate()
-					animS.material.shader = BLUE
+					animS.material.set_shader_parameter("replace_color", Vector4(0,0,1,1))
 					approvalLoop = approvalLoop - 1
 					continue

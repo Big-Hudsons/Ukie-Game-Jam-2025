@@ -296,6 +296,17 @@ visible = false
 offset_left = 1.0
 offset_right = 1.0
 
+[node name="CrowdController" parent="." instance=ExtResource("11_excbq")]
+
+[node name="CollisionShape2D" parent="CrowdController/Area1" index="0"]
+position = Vector2(-25, 23)
+
+[node name="CollisionShape2D" parent="CrowdController/Area2" index="0"]
+position = Vector2(2.5, 24)
+
+[node name="CollisionShape2D" parent="CrowdController/Area3" index="0"]
+position = Vector2(30, 24)
+
 [connection signal="load_question" from="DecisionMaking" to="CrowdController" method="_on_decision_making_load_question"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response2" to="DecisionMaking" method="_on_response_2_pressed"]
