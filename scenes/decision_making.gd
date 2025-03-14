@@ -52,7 +52,7 @@ func update_display():
 	
 	approval = (morality + money) - (emorality + emoney)
 	approval = clamp(approval, 0, 100)
-	$"Approval Bar/HSlider".value = approval
+	$"GameUI/Approval Bar/HSlider".value = approval
 	
 
 
