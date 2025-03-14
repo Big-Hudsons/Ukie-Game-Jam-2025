@@ -113,3 +113,11 @@ func _random_area_pos(area: Area2D):
 	var y = randf_range(min_y, max_y)
 	
 	return Vector2(x, y)
+
+
+func _on_decision_making_load_question() -> void:
+	for c in $".".get_children():
+		if c.has_node("AnimatedSprite2D"):
+			print("true")
+		else: 
+			print("false")
