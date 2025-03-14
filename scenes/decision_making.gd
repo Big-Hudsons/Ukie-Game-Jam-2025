@@ -9,6 +9,7 @@ var emoney = 100
 var roundCounter = 0
 var approval = 0
 var gameOver = false
+@onready var on_click_sfx: AudioStreamPlayer = $"Button Control/onClickSFX"
 
 #signals
 signal load_question(approval)
@@ -103,12 +104,18 @@ func gameResult():
 
 func _on_response_1_pressed() -> void:
 	if current_question:
+		on_click_sfx.playing = true
+		
 		calculation(0) 
 #this makes choice one 0
 func _on_response_2_pressed() -> void:
 	if current_question:
+		on_click_sfx.playing = true
+		
 		calculation(1)
 #this makes choice two 1
+
+
 
 func _on_main_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
