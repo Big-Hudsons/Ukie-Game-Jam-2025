@@ -1,6 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://dfwuvcxtdojal"]
+[gd_scene load_steps=14 format=4 uid="uid://dfwuvcxtdojal"]
 
 [ext_resource type="Script" uid="uid://by0xc58x2fpre" path="res://scripts/ui/tutorial_scene.gd" id="1_7w3rm"]
+[ext_resource type="Texture2D" uid="uid://cdxwipanwkb07" path="res://assets/ui/moralitySymbol.png" id="2_tnjd1"]
+[ext_resource type="Texture2D" uid="uid://dmamx315mbaws" path="res://assets/ui/moneySymbol.png" id="3_6afxl"]
+[ext_resource type="Texture2D" uid="uid://cqgtw55jt0waw" path="res://assets/crowd/square_crowd_member-sheet.png" id="4_qlwwa"]
 
 [sub_resource type="Image" id="Image_ao3vs"]
 data = {
@@ -538,13 +541,83 @@ grow_vertical = 2
 script = ExtResource("1_7w3rm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 1.0
 offset_top = -1.0
 offset_right = 641.0
 offset_bottom = 359.0
-color = Color(0.349101, 0.768957, 1, 1)
+color = Color(2.45467e-06, 0.437863, 0.61827, 1)
+
+[node name="Text" type="RichTextLabel" parent="."]
+offset_left = 12.0
+offset_top = 55.0
+offset_right = 500.0
+offset_bottom = 335.0
+theme_override_font_sizes/normal_font_size = 14
+text = "The objective of this game is to defeat your opponent in a political argument.
+
+Two options will be presented to you, and the decision you make will impact how the public perceives you. Every decision will raise or lower two different stats, government expenses and public morale, which adds up to the crowd's overall approval rating. 
+
+You need a higher approval rating to win, thus in order to satisfy demand, you might occasionally have to make a decision you wouldn't ordinarily make. Your opponent will ALWAYS choose the option that "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Morality" type="RichTextLabel" parent="."]
+offset_left = 523.0
+offset_top = 95.0
+offset_right = 584.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(0.00198328, 0.109515, 0.544417, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "Morality"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Funding" type="RichTextLabel" parent="."]
+offset_left = 521.0
+offset_top = 188.0
+offset_right = 582.0
+offset_bottom = 210.0
+theme_override_colors/default_color = Color(0, 0.937975, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "Funding"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Contrasts" type="RichTextLabel" parent="."]
+offset_left = 96.0
+offset_top = 272.0
+offset_right = 162.0
+offset_bottom = 294.0
+theme_override_colors/default_color = Color(0.886092, 0, 0.34152, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "contrasts"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Contrasts2" type="RichTextLabel" parent="."]
+offset_left = 164.0
+offset_top = 272.0
+offset_right = 491.0
+offset_bottom = 294.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "with yours, so use that to your benefit."
+fit_content = true
+
+[node name="Crowd2" type="RichTextLabel" parent="."]
+offset_left = 522.0
+offset_top = 288.0
+offset_right = 583.0
+offset_bottom = 310.0
+theme_override_font_sizes/normal_font_size = 14
+text = "Public
+Approval"
+fit_content = true
+horizontal_alignment = 1
 
 [node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 178.0
 offset_top = -1.0
 offset_right = 458.0
@@ -557,6 +630,7 @@ autowrap_mode = 0
 tab_size = 5
 
 [node name="StartGame" type="Button" parent="."]
+layout_mode = 0
 offset_left = 261.0
 offset_top = 312.0
 offset_right = 372.0
@@ -568,5 +642,18 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_tnjd1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6afxl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qlwwa")
 text = "Start"
+
+[node name="MoralitySymbol" type="Sprite2D" parent="."]
+position = Vector2(553, 71)
+texture = ExtResource("2_tnjd1")
+
+[node name="MoneySymbol" type="Sprite2D" parent="."]
+position = Vector2(552, 165)
+texture = ExtResource("3_6afxl")
+
+[node name="Crowd" type="Sprite2D" parent="."]
+position = Vector2(552, 262)
+texture = ExtResource("4_qlwwa")
+hframes = 6
 
 [connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
