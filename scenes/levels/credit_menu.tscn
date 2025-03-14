@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://iibx4ly8f88s"]
+[gd_scene load_steps=12 format=4 uid="uid://fmvmq2dpwx6c"]
 
-[ext_resource type="Script" uid="uid://0qg4k7cefms0" path="res://scripts/ui/credit_menu.gd" id="1_su1d7"]
+[ext_resource type="Script" path="res://scripts/ui/credit_menu.gd" id="1_su1d7"]
 [ext_resource type="FontFile" uid="uid://sixtdmgr5wra" path="res://assets/fonts/ARCO.ttf" id="2_bradf"]
 [ext_resource type="Texture2D" uid="uid://dnhkj056q30ap" path="res://assets/GroupPhoto.jpg" id="3_bradf"]
+[ext_resource type="AudioStream" uid="uid://bfh5wsiuckq54" path="res://assets/Sounds/not political_2.mp3" id="4_r6tfe"]
 
 [sub_resource type="Image" id="Image_su1d7"]
 data = {
@@ -336,6 +337,7 @@ scale = Vector2(0.184375, 0.178071)
 texture = ExtResource("3_bradf")
 
 [node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 293.0
 offset_top = 77.0
 offset_right = 615.0
@@ -349,5 +351,10 @@ From left to right in the picture;
 • Emiel Doek - Audio Design & Implementation"
 fit_content = true
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r6tfe")
+autoplay = true
+stream_paused = true
 
 [connection signal="pressed" from="ColorRect/Quit" to="." method="_on_quit_pressed"]

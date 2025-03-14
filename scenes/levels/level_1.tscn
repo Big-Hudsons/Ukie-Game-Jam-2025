@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://coktl6mo5hp35"]
+[gd_scene load_steps=22 format=3 uid="uid://coktl6mo5hp35"]
 
 [ext_resource type="Texture2D" uid="uid://dwrp1t35fdahi" path="res://assets/ui/presidentialDebateArena.png" id="1_ksju7"]
 [ext_resource type="Texture2D" uid="uid://ulbry7s6kvva" path="res://assets/characters/blueCandidate.png" id="2_iav0o"]
@@ -9,11 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://bv4ykfkkjcgmo" path="res://assets/ui/prototypeMoralSymbol.png" id="5_s8va5"]
 [ext_resource type="Texture2D" uid="uid://cfjsm1r0v2r4l" path="res://assets/ui/prototypeMoneySymbol.png" id="6_s8va5"]
 [ext_resource type="Texture2D" uid="uid://bj0hmg7gx8yhu" path="res://assets/ui/prototypeMoralSymbol2.png" id="7_dga24"]
+[ext_resource type="AudioStream" uid="uid://ckun5gxl8kxe2" path="res://assets/Sounds/eagle-281163.mp3" id="8_bahl2"]
 [ext_resource type="Texture2D" uid="uid://bvl13uv1dqf7x" path="res://assets/ui/prototypeMoneySymbol2.png" id="8_dga24"]
 [ext_resource type="StyleBox" uid="uid://p8j3qffp77l0" path="res://assets/approval/new_style_box_line.tres" id="9_dga24"]
 [ext_resource type="FontFile" uid="uid://ci1axvndqptpx" path="res://assets/fonts/Kanit-Medium.ttf" id="10_excbq"]
 [ext_resource type="PackedScene" uid="uid://q3aksw1k53mb" path="res://scenes/crowd/crowd_controller.tscn" id="11_excbq"]
 [ext_resource type="PackedScene" uid="uid://dcg1jc1n7ccwf" path="res://scenes/ui/pause_menu.tscn" id="14_wtwp4"]
+[ext_resource type="AudioStream" uid="uid://d17527s7htdp2" path="res://assets/Sounds/choicehover.mp3" id="15_iwr0g"]
+[ext_resource type="AudioStream" uid="uid://bfh5wsiuckq54" path="res://assets/Sounds/not political_2.mp3" id="16_bahl2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qxy0u"]
 
@@ -69,6 +72,9 @@ position = Vector2(30, 32.5)
 visible = false
 offset_left = 1.0
 offset_right = 1.0
+
+[node name="PauseAudio" type="AudioStreamPlayer" parent="PauseMenu"]
+stream = ExtResource("8_bahl2")
 
 [node name="DecisionMaking" type="Control" parent="."]
 layout_mode = 3
@@ -253,6 +259,9 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "Round"
 
+[node name="DecisionClicked" type="AudioStreamPlayer" parent="DecisionMaking/Button Control"]
+stream = ExtResource("15_iwr0g")
+
 [node name="GameOver" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -276,6 +285,13 @@ offset_top = 210.0
 offset_right = 428.0
 offset_bottom = 252.0
 text = "Main Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_bahl2")
+volume_db = -15.928
+autoplay = true
+stream_paused = true
+parameters/looping = true
 
 [connection signal="update_crowd" from="DecisionMaking" to="CrowdController" method="_on_decision_making_load_question"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]

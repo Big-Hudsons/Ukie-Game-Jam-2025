@@ -9,6 +9,7 @@ var emoney = 100
 var roundCounter = 0
 var approval = 0
 var gameOver = false
+@onready var decision_clicked: AudioStreamPlayer = $"Button Control/DecisionClicked"
 
 signal update_crowd(approval)
 
@@ -103,10 +104,12 @@ func gameResult():
 
 func _on_response_1_pressed() -> void:
 	if current_question:
+		decision_clicked.playing = true
 		calculation(0) 
 #this makes choice one 0
 func _on_response_2_pressed() -> void:
 	if current_question:
+		decision_clicked.playing = true
 		calculation(1)
 #this makes choice two 1
 
