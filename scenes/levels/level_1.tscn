@@ -1,7 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://coktl6mo5hp35"]
+[gd_scene load_steps=19 format=3 uid="uid://coktl6mo5hp35"]
 
 [ext_resource type="Texture2D" uid="uid://dwrp1t35fdahi" path="res://assets/ui/presidentialDebateArena.png" id="1_ksju7"]
-[ext_resource type="Script" path="res://scenes/levels/pause_controller.gd" id="1_mm8aj"]
 [ext_resource type="Texture2D" uid="uid://ulbry7s6kvva" path="res://assets/characters/blueCandidate.png" id="2_iav0o"]
 [ext_resource type="Texture2D" uid="uid://dugaatxvv4f8f" path="res://assets/ui/bluePodium.png" id="2_nsrm0"]
 [ext_resource type="Texture2D" uid="uid://noi6hbra0t4t" path="res://assets/ui/redPodium.png" id="3_x42e6"]
@@ -16,20 +15,19 @@
 [ext_resource type="PackedScene" uid="uid://q3aksw1k53mb" path="res://scenes/crowd/crowd_controller.tscn" id="11_excbq"]
 [ext_resource type="PackedScene" uid="uid://dcg1jc1n7ccwf" path="res://scenes/ui/pause_menu.tscn" id="14_wtwp4"]
 
-[sub_resource type="FontVariation" id="FontVariation_iav0o"]
-base_font = ExtResource("10_excbq")
-
-[sub_resource type="Theme" id="Theme_dnkej"]
-default_font = SubResource("FontVariation_iav0o")
-
 [sub_resource type="QuadMesh" id="QuadMesh_qxy0u"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_excbq"]
 color = Color(0.89449, 0, 0.258401, 1)
 thickness = 10
 
+[sub_resource type="FontVariation" id="FontVariation_iav0o"]
+base_font = ExtResource("10_excbq")
+
+[sub_resource type="Theme" id="Theme_dnkej"]
+default_font = SubResource("FontVariation_iav0o")
+
 [node name="Level1" type="Node2D"]
-script = ExtResource("1_mm8aj")
 
 [node name="PresidentialDebateArena" type="Sprite2D" parent="."]
 position = Vector2(321, 179)
@@ -56,6 +54,17 @@ position = Vector2(417, 157)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("3_x42e6")
 
+[node name="CrowdController" parent="." instance=ExtResource("11_excbq")]
+
+[node name="CollisionShape2D" parent="CrowdController/Area1" index="0"]
+position = Vector2(-25, 23)
+
+[node name="CollisionShape2D" parent="CrowdController/Area2" index="0"]
+position = Vector2(2.5, 24)
+
+[node name="CollisionShape2D" parent="CrowdController/Area3" index="0"]
+position = Vector2(30, 24)
+
 [node name="DecisionMaking" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -80,7 +89,7 @@ offset_bottom = -274.0
 theme_override_constants/separation = -4420
 
 [node name="Morality" type="Sprite2D" parent="DecisionMaking/GameUI/BlueSideUI"]
-position = Vector2(37.25, -91.75)
+position = Vector2(66.25, -91.75)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_s8va5")
 
@@ -92,7 +101,7 @@ offset_bottom = 13.0
 text = "100"
 
 [node name="Money" type="Sprite2D" parent="DecisionMaking/GameUI/BlueSideUI"]
-position = Vector2(141.25, -91.75)
+position = Vector2(150.25, -91.75)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_s8va5")
 
@@ -112,7 +121,7 @@ offset_bottom = -320.75
 theme_override_constants/separation = -4420
 
 [node name="Morality" type="Sprite2D" parent="DecisionMaking/GameUI/RedSide"]
-position = Vector2(-91, -92)
+position = Vector2(-97, -92)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_dga24")
 
@@ -124,7 +133,7 @@ offset_bottom = 11.0
 text = "100"
 
 [node name="Money" type="Sprite2D" parent="DecisionMaking/GameUI/RedSide"]
-position = Vector2(13, -92)
+position = Vector2(-13, -92)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_dga24")
 
@@ -134,6 +143,45 @@ offset_top = -10.0
 offset_right = 2.0
 offset_bottom = 15.0
 text = "10m"
+
+[node name="Approval Bar" type="Control" parent="DecisionMaking/GameUI"]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 285.0
+offset_top = 327.0
+offset_right = 325.0
+offset_bottom = 367.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="DecisionMaking/GameUI/Approval Bar"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(34.5, 19)
+scale = Vector2(647, 36)
+mesh = SubResource("QuadMesh_qxy0u")
+
+[node name="Label" type="Label" parent="DecisionMaking/GameUI/Approval Bar"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 121.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("10_excbq")
+theme_override_font_sizes/font_size = 21
+text = "Approval"
+
+[node name="HSlider" type="HSlider" parent="DecisionMaking/GameUI/Approval Bar"]
+layout_mode = 0
+offset_left = -282.0
+offset_top = 16.0
+offset_right = 348.0
+offset_bottom = 32.0
+theme_override_styles/slider = SubResource("StyleBoxLine_excbq")
+theme_override_styles/grabber_area = ExtResource("9_dga24")
+theme_override_styles/grabber_area_highlight = ExtResource("9_dga24")
+editable = false
+scrollable = false
 
 [node name="Button Control" type="Control" parent="DecisionMaking"]
 layout_mode = 3
@@ -207,48 +255,15 @@ horizontal_alignment = 1
 
 [node name="RoundCounter" type="RichTextLabel" parent="DecisionMaking/Button Control"]
 layout_mode = 0
-offset_left = 266.0
+offset_left = 297.0
 offset_top = -6.0
-offset_right = 385.0
+offset_right = 416.0
 offset_bottom = 21.0
 theme = SubResource("Theme_dnkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
-text = "Round Counter"
-
-[node name="Approval Bar" type="Control" parent="DecisionMaking"]
-top_level = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = 285.0
-offset_top = 327.0
-offset_right = 325.0
-offset_bottom = 367.0
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="DecisionMaking/Approval Bar"]
-position = Vector2(34.5, 19)
-scale = Vector2(647, 36)
-mesh = SubResource("QuadMesh_qxy0u")
-
-[node name="Label" type="Label" parent="DecisionMaking/Approval Bar"]
-layout_mode = 0
-offset_right = 70.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Approval"
-
-[node name="HSlider" type="HSlider" parent="DecisionMaking/Approval Bar"]
-layout_mode = 0
-offset_left = -282.0
-offset_top = 16.0
-offset_right = 348.0
-offset_bottom = 32.0
-theme_override_styles/slider = SubResource("StyleBoxLine_excbq")
-theme_override_styles/grabber_area = ExtResource("9_dga24")
-theme_override_styles/grabber_area_highlight = ExtResource("9_dga24")
-editable = false
-scrollable = false
+text = "Round"
 
 [node name="Game Over" type="Control" parent="DecisionMaking"]
 anchors_preset = 0
@@ -281,17 +296,7 @@ visible = false
 offset_left = 1.0
 offset_right = 1.0
 
-[node name="CrowdController" parent="." instance=ExtResource("11_excbq")]
-
-[node name="CollisionShape2D" parent="CrowdController/Area1" index="0"]
-position = Vector2(-25, 23)
-
-[node name="CollisionShape2D" parent="CrowdController/Area2" index="0"]
-position = Vector2(2.5, 24)
-
-[node name="CollisionShape2D" parent="CrowdController/Area3" index="0"]
-position = Vector2(30, 24)
-
+[connection signal="load_question" from="DecisionMaking" to="CrowdController" method="_on_decision_making_load_question"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response2" to="DecisionMaking" method="_on_response_2_pressed"]
 [connection signal="pressed" from="DecisionMaking/Game Over/GameOverButton" to="DecisionMaking" method="_on_main_menu_button_pressed"]
