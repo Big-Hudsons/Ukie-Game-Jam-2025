@@ -22,17 +22,93 @@
 	"question": "How will you handle the pony crisis?",
 	"responses": [
 	  {
-		"text": "Every family should get one from the Govenment",
+		"text": "Every family should get one from the Government",
 		"effects": {
 		  "money": -60,
 		  "morality": 10
 		}
 	  },
 	  {
-		"text": "Ponies should be outlawed and deported to a uninhabitable island",
+		"text": "Ponies should be outlawed and deported to an uninhabitable island",
 		"effects": {
 		  "money": -10,
 		  "morality": -15
+		}
+	  }
+	]
+  },
+  {
+	"question": "Who would win, 1 billion lions or one of every Pokémon?",
+	"responses": [
+	  {
+		"text": "Ah yes, the lions, there's one billion of them after all",
+		"effects": {
+		  "money": 0,
+		  "morality": 10
+		}
+	  },
+	  {
+		"text": "The Pokémon, they are magical creatures, what could lions do against Charizard?",
+		"effects": {
+		  "money": 0,
+		  "morality": 20
+		}
+	  }
+	]
+  },
+  {
+	"question": "How do you plan on handling the current relationships with crab men?",
+	"responses": [
+	  {
+		"text": "We will free all captive crabs as a sign of peace",
+		"effects": {
+		  "money": 5,
+		  "morality": -10
+		}
+	  },
+	  {
+		"text": "Increase production on large boiling pots so we can eat the crab men",
+		"effects": {
+		  "money": 5,
+		  "morality": 20
+		}
+	  }
+	]
+  },
+  {
+	"question": "If forced into gladiatorial combat, would you rather fight 10 adult-sized kindergartners or 10 kindergartner-sized adults?",
+	"responses": [
+	  {
+		"text": "The adult-sized kindergartners, they would be so distracted that they would barely fight back",
+		"effects": {
+		  "money": 0,
+		  "morality": -20
+		}
+	  },
+	  {
+		"text": "I would never hurt a citizen of mine, I would die with honor",
+		"effects": {
+		  "money": 5,
+		  "morality": 20
+		}
+	  }
+	]
+  },
+{
+	"question": "Yes, he is the biggest threat to this nation and must be stopped",
+	"responses": [
+	  {
+		"text": "Yes, he is the biggest threat to this nation and must be stopped",
+		"effects": {
+		  "money": 0,
+		  "morality": -10
+		}
+	  },
+	  {
+		"text": "Of course not! Fairies don't care about teeth they only want earlobes",
+		"effects": {
+		  "money": 5,
+		  "morality": -5
 		}
 	  }
 	]
