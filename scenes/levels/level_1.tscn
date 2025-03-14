@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://coktl6mo5hp35"]
+[gd_scene load_steps=14 format=3 uid="uid://coktl6mo5hp35"]
 
 [ext_resource type="Texture2D" uid="uid://dwrp1t35fdahi" path="res://assets/ui/presidentialDebateArena.png" id="1_ksju7"]
 [ext_resource type="Texture2D" uid="uid://dugaatxvv4f8f" path="res://assets/ui/bluePodium.png" id="2_nsrm0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bj0hmg7gx8yhu" path="res://assets/ui/prototypeMoralSymbol2.png" id="7_dga24"]
 [ext_resource type="Texture2D" uid="uid://bvl13uv1dqf7x" path="res://assets/ui/prototypeMoneySymbol2.png" id="8_dga24"]
 [ext_resource type="StyleBox" uid="uid://p8j3qffp77l0" path="res://assets/approval/new_style_box_line.tres" id="9_dga24"]
+[ext_resource type="PackedScene" uid="uid://q3aksw1k53mb" path="res://scenes/crowd/crowd_controller.tscn" id="11_excbq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qxy0u"]
 
@@ -241,6 +242,20 @@ offset_bottom = 23.0
 offset_right = 8.0
 offset_bottom = 8.0
 
+[node name="CrowdController" parent="." instance=ExtResource("11_excbq")]
+crowdDensity = 99
+
+[node name="CollisionShape2D" parent="CrowdController/Area1" index="0"]
+position = Vector2(-24.375, 23.75)
+
+[node name="CollisionShape2D" parent="CrowdController/Area2" index="0"]
+position = Vector2(0, 24.25)
+
+[node name="CollisionShape2D" parent="CrowdController/Area3" index="0"]
+position = Vector2(27.375, 23.25)
+
 [connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response2" to="DecisionMaking" method="_on_response_2_pressed"]
 [connection signal="pressed" from="Approval/CanvasLayer/MainMenuButton" to="DecisionMaking" method="_on_main_menu_button_pressed"]
+
+[editable path="CrowdController"]
