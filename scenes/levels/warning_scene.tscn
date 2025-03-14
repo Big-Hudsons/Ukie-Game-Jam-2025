@@ -29,7 +29,7 @@ theme_override_font_sizes/normal_font_size = 46
 text = "NOTICE: "
 fit_content = true
 
-[node name="Warning2" type="RichTextLabel" parent="."]
+[node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 175.0
