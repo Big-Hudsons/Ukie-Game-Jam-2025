@@ -40,6 +40,11 @@ func update_display():
 	$GameUI/RedSide/Morality/RedMoralityText.text = "%d" % [emorality] + "%"
 	$GameUI/RedSide/Money/RedMoneyText.text = "%d" % [emoney] + "M"
 	$"Round Counter".text = "Round: " + str(roundCounter)
+	
+	var approval = (morality + money) - (emorality + emoney)
+	approval = clamp(approval, 0, 100)
+	$"../Approval/CanvasLayer/HSlider".value = approval
+	
 
 func calculation(Player_Choice):
 	# Player Choice
@@ -54,7 +59,7 @@ func calculation(Player_Choice):
 	var enemy_calc = current_question["responses"][Enemy_Choice]["effects"]
 	emorality += enemy_calc.get("morality", 0)
 	emoney += enemy_calc.get("money", 0)
-
+	
 	update_display()
 	load_new_question()
 
