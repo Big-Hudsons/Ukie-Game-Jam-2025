@@ -10,6 +10,8 @@ var roundCounter = 0
 var approval = 0
 var gameOver = false
 
+signal update_crowd(approval)
+
 
 func _ready():
 	randomize()
@@ -25,6 +27,7 @@ func load_new_question():
 		current_question_index = randi() % QuestionData.Questions.size()
 		current_question = QuestionData.Questions[current_question_index]
 		update_question_display()
+		emit_signal("update_crowd", calculate_approval())
 
 
 func update_question_display():

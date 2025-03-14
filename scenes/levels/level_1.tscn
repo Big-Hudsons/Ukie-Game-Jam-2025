@@ -277,6 +277,7 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "Round"
 
+[connection signal="update_crowd" from="DecisionMaking" to="CrowdController" method="_on_decision_making_load_question"]
 [connection signal="pressed" from="DecisionMaking/GameUI/Game Over/GameOverButton" to="DecisionMaking" method="_on_game_over_button_pressed"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]
 [connection signal="pressed" from="DecisionMaking/Button Control/Response2" to="DecisionMaking" method="_on_response_2_pressed"]
