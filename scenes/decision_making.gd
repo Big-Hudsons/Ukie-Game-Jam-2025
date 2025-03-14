@@ -18,7 +18,8 @@ func _ready():
 	randomize()
 	load_new_question()
 	update_display()
-	$"Game Over/GameOverButton".visible = false
+	$"GameUI/Game Over/GameOverButton".visible = false
+	$"GameUI/Game Over/GameOverLabel".visible = false
 
 
 func load_new_question():
@@ -31,7 +32,7 @@ func load_new_question():
 
 func update_question_display():
 	if current_question:
-		$"Button Control/Question".text = current_question["question"]
+		$"../Button Control/Question".text = current_question["question"]
 
 		var responses = current_question["responses"]
 
@@ -48,7 +49,7 @@ func update_display():
 	$GameUI/BlueSideUI/Money/BlueMoney.text = "%d" % [money] + "M"
 	$GameUI/RedSide/Morality/RedMorality.text = "%d" % [emorality] + "%"
 	$GameUI/RedSide/Money/RedMoney.text = "%d" % [emoney] + "M"
-	$"Button Control/RoundCounter".text = "Round: " + str(roundCounter)
+	$"../Button Control/RoundCounter".text = "Round: " + str(roundCounter)
 	
 	approval = (morality + money) - (emorality + emoney)
 	approval = clamp(approval, 0, 100)
@@ -91,15 +92,15 @@ func GameOver():
 
 
 func disable_buttons():
-	$"Button Control/Response1".disabled = true
-	$"Button Control/Response2".disabled = true
+	$"../Button Control/Response1".disabled = true
+	$"../Button Control/Response2".disabled = true
 
 
 func gameResult():
 	var Result = "You %s! Approval: %d%%" % ["Win" if approval >= 50 else "Lose", approval]
-	$"Game Over/Label".visible  = true
-	$"Game Over/Label".text = Result
-	$"Game Over/GameOverButton".visible = true
+	$"GameUI/Game Over/GameOverLabel".visible  = true
+	$"GameUI/Game Over/GameOverLabel".text = Result
+	$"GameUI/Game Over/GameOverButton".visible = true
 
 func _on_response_1_pressed() -> void:
 	if current_question:
@@ -110,5 +111,5 @@ func _on_response_2_pressed() -> void:
 		calculation(1)
 #this makes choice two 1
 
-func _on_main_menu_button_pressed() -> void:
+func _on_game_over_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
