@@ -10,9 +10,6 @@ var roundCounter = 0
 var approval = 0
 var gameOver = false
 
-#signals
-signal load_question(approval)
-signal question_asked
 
 func _ready():
 	randomize()
@@ -20,6 +17,7 @@ func _ready():
 	update_display()
 	$"GameUI/Game Over/GameOverButton".visible = false
 	$"GameUI/Game Over/GameOverLabel".visible = false
+	
 
 
 func load_new_question():
@@ -27,15 +25,13 @@ func load_new_question():
 		current_question_index = randi() % QuestionData.Questions.size()
 		current_question = QuestionData.Questions[current_question_index]
 		update_question_display()
-		emit_signal("load_question", calculate_approval())
 
 
 func update_question_display():
 	if current_question:
-		$"../Button Control/Question".text = current_question["question"]
-
+		$"Button Control/Question".text = current_question["question"]
 		var responses = current_question["responses"]
-
+		
 		for i in range(responses.size()):
 			var button = get_node("Button Control/Response" + str(i+1))
 			if button:
@@ -49,7 +45,7 @@ func update_display():
 	$GameUI/BlueSideUI/Money/BlueMoney.text = "%d" % [money] + "M"
 	$GameUI/RedSide/Morality/RedMorality.text = "%d" % [emorality] + "%"
 	$GameUI/RedSide/Money/RedMoney.text = "%d" % [emoney] + "M"
-	$"../Button Control/RoundCounter".text = "Round: " + str(roundCounter)
+	$"Button Control/RoundCounter".text = "Round: " + str(roundCounter)
 	
 	approval = (morality + money) - (emorality + emoney)
 	approval = clamp(approval, 0, 100)
@@ -75,6 +71,7 @@ func calculation(Player_Choice):
 	if roundCounter >= 10:
 		calculate_approval()
 		GameOver()
+		return
 		
 	if not gameOver:
 		load_new_question()

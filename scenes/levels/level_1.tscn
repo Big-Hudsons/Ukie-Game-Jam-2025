@@ -15,17 +15,17 @@
 [ext_resource type="PackedScene" uid="uid://q3aksw1k53mb" path="res://scenes/crowd/crowd_controller.tscn" id="11_excbq"]
 [ext_resource type="PackedScene" uid="uid://dcg1jc1n7ccwf" path="res://scenes/ui/pause_menu.tscn" id="14_wtwp4"]
 
-[sub_resource type="FontVariation" id="FontVariation_iav0o"]
-base_font = ExtResource("10_excbq")
-
-[sub_resource type="Theme" id="Theme_dnkej"]
-default_font = SubResource("FontVariation_iav0o")
-
 [sub_resource type="QuadMesh" id="QuadMesh_qxy0u"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_excbq"]
 color = Color(0.89449, 0, 0.258401, 1)
 thickness = 10
+
+[sub_resource type="FontVariation" id="FontVariation_iav0o"]
+base_font = ExtResource("10_excbq")
+
+[sub_resource type="Theme" id="Theme_dnkej"]
+default_font = SubResource("FontVariation_iav0o")
 
 [node name="Level1" type="Node2D"]
 
@@ -65,87 +65,10 @@ position = Vector2(2.5, 32.4375)
 [node name="CollisionShape2D" parent="CrowdController/Area3" index="0"]
 position = Vector2(30, 32.5)
 
-[node name="Button Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 359.0
-
-[node name="Label" type="Label" parent="Button Control"]
+[node name="PauseMenu" parent="." instance=ExtResource("14_wtwp4")]
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.147
-anchor_top = 0.0830724
-anchor_right = 0.875188
-anchor_bottom = 0.148072
-offset_left = -0.0800171
-offset_top = 0.176998
-offset_right = -0.120026
-offset_bottom = -0.158001
-text = "[rainbow]This is where the question text will appear"
-autowrap_mode = 3
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Response1" type="Button" parent="Button Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.232375
-anchor_top = 0.35378
-anchor_right = 0.487938
-anchor_bottom = 0.532212
-offset_left = 0.279999
-offset_top = -0.00700378
-offset_right = -0.280014
-offset_bottom = -0.0640106
-theme_override_font_sizes/font_size = 12
-text = "Response 1"
-alignment = 0
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Response2" type="Button" parent="Button Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.53125
-anchor_top = 0.350565
-anchor_right = 0.782812
-anchor_bottom = 0.528997
-offset_top = 0.146996
-offset_bottom = 0.0899963
-theme_override_font_sizes/font_size = 12
-text = "Response 2"
-alignment = 0
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="Question" type="RichTextLabel" parent="Button Control"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 31.0
-offset_right = 640.0
-offset_bottom = 64.0
-theme = SubResource("Theme_dnkej")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 21
-bbcode_enabled = true
-text = "This is where the question will appear"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="RoundCounter" type="RichTextLabel" parent="Button Control"]
-layout_mode = 0
-offset_left = 297.0
-offset_top = -6.0
-offset_right = 416.0
-offset_bottom = 21.0
-theme = SubResource("Theme_dnkej")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-bbcode_enabled = true
-text = "Round"
+offset_left = 1.0
+offset_right = 1.0
 
 [node name="DecisionMaking" type="Control" parent="."]
 layout_mode = 3
@@ -289,14 +212,73 @@ theme_override_styles/grabber_area_highlight = ExtResource("9_dga24")
 editable = false
 scrollable = false
 
-[node name="PauseMenu" parent="." instance=ExtResource("14_wtwp4")]
-visible = false
-offset_left = 1.0
-offset_right = 1.0
+[node name="Button Control" type="Control" parent="DecisionMaking"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 359.0
 
-[connection signal="pressed" from="Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]
-[connection signal="pressed" from="Button Control/Response2" to="DecisionMaking" method="_on_response_2_pressed"]
-[connection signal="load_question" from="DecisionMaking" to="CrowdController" method="_on_decision_making_load_question"]
+[node name="Response1" type="Button" parent="DecisionMaking/Button Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.232375
+anchor_top = 0.35378
+anchor_right = 0.487938
+anchor_bottom = 0.532212
+offset_left = 0.279999
+offset_top = -0.00700378
+offset_right = -0.279999
+offset_bottom = -0.0640106
+theme_override_font_sizes/font_size = 12
+text = "Response 1"
+alignment = 0
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Response2" type="Button" parent="DecisionMaking/Button Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53125
+anchor_top = 0.350565
+anchor_right = 0.782812
+anchor_bottom = 0.528997
+offset_top = 0.146996
+offset_bottom = 0.0899963
+theme_override_font_sizes/font_size = 12
+text = "Response 2"
+alignment = 0
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Question" type="RichTextLabel" parent="DecisionMaking/Button Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 31.0
+offset_right = 640.0
+offset_bottom = 64.0
+theme = SubResource("Theme_dnkej")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "This is where the question will appear"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RoundCounter" type="RichTextLabel" parent="DecisionMaking/Button Control"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = -6.0
+offset_right = 416.0
+offset_bottom = 21.0
+theme = SubResource("Theme_dnkej")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "Round"
+
 [connection signal="pressed" from="DecisionMaking/GameUI/Game Over/GameOverButton" to="DecisionMaking" method="_on_game_over_button_pressed"]
+[connection signal="pressed" from="DecisionMaking/Button Control/Response1" to="DecisionMaking" method="_on_response_1_pressed"]
+[connection signal="pressed" from="DecisionMaking/Button Control/Response2" to="DecisionMaking" method="_on_response_2_pressed"]
 
 [editable path="CrowdController"]
