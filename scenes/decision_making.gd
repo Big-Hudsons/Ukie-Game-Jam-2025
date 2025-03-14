@@ -15,10 +15,9 @@ func _ready():
 	randomize()
 	load_new_question()
 	update_display()
-	$"GameUI/Game Over/GameOverButton".visible = false
-	$"GameUI/Game Over/GameOverLabel".visible = false
+	$"../Game Over/MoveToMainMenu".visible = false
+	$"../Game Over/GameOverLabel".visible = false
 	
-
 
 func load_new_question():
 	if QuestionData.Questions.size() > 0:
@@ -89,15 +88,16 @@ func GameOver():
 
 
 func disable_buttons():
-	$"../Button Control/Response1".disabled = true
-	$"../Button Control/Response2".disabled = true
+	$"Button Control/Response1".disabled = true
+	$"Button Control/Response2".disabled = true
 
 
 func gameResult():
 	var Result = "You %s! Approval: %d%%" % ["Win" if approval >= 50 else "Lose", approval]
-	$"GameUI/Game Over/GameOverLabel".visible  = true
-	$"GameUI/Game Over/GameOverLabel".text = Result
-	$"GameUI/Game Over/GameOverButton".visible = true
+	$"../Game Over/GameOverLabel".visible = true
+	$"../Game Over/GameOverLabel".text = Result
+	$"../Game Over/MoveToMainMenu".visible = true
+	
 
 func _on_response_1_pressed() -> void:
 	if current_question:
@@ -108,5 +108,5 @@ func _on_response_2_pressed() -> void:
 		calculation(1)
 #this makes choice two 1
 
-func _on_game_over_button_pressed() -> void:
+func _on_move_to_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
