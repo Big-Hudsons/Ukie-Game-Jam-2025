@@ -36,7 +36,6 @@ project/assembly_name="Ukie Games GameJam Big Hudsons"
 [file_customization]
 
 folder_colors={
-"res://addons/": "red",
 "res://assets/": "orange",
 "res://resources/": "yellow",
 "res://scenes/": "green",
