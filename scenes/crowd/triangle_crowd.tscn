@@ -1,10 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://cn57jpepr0fyh"]
+[gd_scene load_steps=12 format=3 uid="uid://cn57jpepr0fyh"]
 
 [ext_resource type="Texture2D" uid="uid://crqbrvx5nlx5u" path="res://assets/crowd/triangle_crowd_member-sheet.png" id="1_phk77"]
-[ext_resource type="Shader" uid="uid://b7cpkgwg4b4fp" path="res://shaders/Red.gdshader" id="1_rik1m"]
+[ext_resource type="Shader" uid="uid://b8qpt8dol6qo5" path="res://shaders/color_change.gdshader" id="1_rik1m"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxusl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3byh"]
 shader = ExtResource("1_rik1m")
+shader_parameter/target_color = Color(0, 0, 0, 1)
+shader_parameter/replace_color = Color(0, 0, 0, 1)
+shader_parameter/tolerance = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rik1m"]
+shader = ExtResource("1_rik1m")
+shader_parameter/target_color = Color(0, 0, 0, 1)
+shader_parameter/replace_color = Color(1, 0, 0, 1)
+shader_parameter/tolerance = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phk77"]
 atlas = ExtResource("1_phk77")
@@ -62,9 +71,10 @@ animations = [{
 }]
 
 [node name="Triangle Crowd" type="Marker2D"]
+material = SubResource("ShaderMaterial_j3byh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_uxusl")
+material = SubResource("ShaderMaterial_rik1m")
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_1gbjp")
 animation = &"idle"
