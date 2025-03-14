@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://iibx4ly8f88s"]
+
+[ext_resource type="FontFile" uid="uid://sixtdmgr5wra" path="res://assets/fonts/ARCO.ttf" id="1_sileb"]
+
+[node name="credit_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(2.40654e-08, 0.151356, 0.13868, 1)
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_left = 207.0
+offset_top = 1.0
+offset_right = 436.0
+offset_bottom = 55.0
+theme_override_fonts/normal_font = ExtResource("1_sileb")
+theme_override_font_sizes/normal_font_size = 50
+text = "Credits"
+fit_content = true
+autowrap_mode = 0
+tab_size = 5
